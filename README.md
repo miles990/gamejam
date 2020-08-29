@@ -28,6 +28,7 @@ add some setting to config.json
 ```
 ./centrifugo --config=config.json
 ```
+[server admin](http://localhost:8000)
 
 ### Client
 ```
@@ -36,4 +37,5 @@ cd gamejam
 ## Change your exampleTokenHmacSecret variable in /game/event_handler.go
 ## It's the same setting in server config.json 
 ## "token_hmac_secret_key"
+go run main.go
 ```
