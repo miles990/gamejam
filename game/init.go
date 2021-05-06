@@ -1,10 +1,14 @@
 package game
 
 // NewGame ...
-func NewGame() *Game {
-	g := &Game{}
-	g.init()
-	return g
+// func NewGame() *Game {
+// 	g := &Game{}
+// 	g.init()
+// 	return g
+// }
+
+func init() {
+	G.init()
 }
 
 // NewTextHandler ...

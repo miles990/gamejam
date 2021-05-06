@@ -14,7 +14,7 @@ import (
 
 // In real life clients should never know secret key. This is only for example
 // purposes to quickly generate JWT for connection.
-const exampleTokenHmacSecret = "8a9d4508-a038-4b66-8a44-5820cb305334"
+const exampleTokenHmacSecret = "8d7e016a-dee8-4394-8f8a-75d7a932b8c8"
 
 func connToken(user string, exp int64) string {
 	// NOTE that JWT must be generated on backend side of your application!
@@ -129,6 +129,7 @@ func (h *EventHandler) sendMsg2Screen(eventType EventType, msg string) {
 }
 
 func (h *EventHandler) newClient() *centrifuge.Client {
+	// wsURL := "ws://localhost:3030/ws"
 	wsURL := "ws://localhost:8000/connection/websocket"
 	c := centrifuge.New(wsURL, centrifuge.DefaultConfig())
 

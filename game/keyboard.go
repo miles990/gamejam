@@ -7,9 +7,9 @@ import (
 	"log"
 	"strings"
 
-	"github.com/hajimehoshi/ebiten"
-	"github.com/hajimehoshi/ebiten/examples/keyboard/keyboard"
-	rkeyabord "github.com/hajimehoshi/ebiten/examples/resources/images/keyboard"
+	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/examples/keyboard/keyboard"
+	rkeyabord "github.com/hajimehoshi/ebiten/v2/examples/resources/images/keyboard"
 )
 
 var (
@@ -28,7 +28,7 @@ func (key *Keyboard) init() {
 		log.Fatal(err)
 	}
 
-	keyboardImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	keyboardImage = ebiten.NewImageFromImage(img)
 }
 
 // Update ...

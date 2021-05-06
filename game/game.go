@@ -1,7 +1,8 @@
 package game
 
 import (
-	"github.com/hajimehoshi/ebiten"
+	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/inpututil"
 )
 
 // Game adapter
@@ -16,6 +17,8 @@ type Game struct {
 
 	gameEventChan chan *Event // 內部系統之間傳遞訊息用
 }
+
+var G Game
 
 func (g *Game) init() *Game {
 	g.screenWidth = 320
@@ -37,10 +40,11 @@ func (g *Game) init() *Game {
 }
 
 // Update : Update the logical state
-func (g *Game) Update(screen *ebiten.Image) error {
-	if err := g.key.Update(screen); err != nil {
-		return err
-	}
+func (g *Game) Update() error {
+	// if err := g.key.Update(screen); err != nil {
+	// 	return err
+	// }
+	g.key.pressed = inpututil.PressedKeys()
 	return nil
 }
 
